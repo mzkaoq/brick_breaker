@@ -5,13 +5,12 @@ from mechanics import Brick, Ball, Racket
 class Draw:
     def __int__(self):
         pass
-    def draw_map(self,win,map):
-        for x in map:
-            for y in x:
-                if x[y] == 0:
-                    pass
-                elif isinstance(x[y], Brick):
-                    self.draw_rect(win,x[y])
+
+    def draw_map(self,win,map,list_of_blocks):
+        self.draw_blocks(win,list_of_blocks)
+    def draw_blocks(self,win,list_of_blocks):
+        for brick in list_of_blocks:
+            self.draw_rect(win,brick)
 
 
     def draw_rect(self,win,brick):
