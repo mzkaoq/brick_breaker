@@ -12,8 +12,8 @@ class Game:
     def init(self):
         self.game_plan = Game_plan()
         self.drawing = Draw()
-        self.drawing.draw_map(self.win, self.game_plan.map, self.game_plan.list_of_blocks)
+        self.drawing.draw_map(self.win, self.game_plan)
     def update(self):
-        self.drawing.draw_map(self.win,self.game_plan,self.game_plan.list_of_blocks)
+        self.drawing.draw_map(self.win,self.game_plan)
 
 

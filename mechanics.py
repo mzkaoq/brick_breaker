@@ -3,8 +3,13 @@ class Ball:
         self.x = x
         self.y = y
         self.speed = 10
-        self.direction = 1
+        self.direction_x = 1
+        self.direction_y = 1
         self.power = 1
+
+    def change_speed(self,amount):
+        self.speed *= amount
+
 
 
 class Brick:

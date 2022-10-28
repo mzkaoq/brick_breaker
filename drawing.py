@@ -6,8 +6,8 @@ class Draw:
     def __int__(self):
         pass
 
-    def draw_map(self,win,map,list_of_blocks):
-        self.draw_blocks(win,list_of_blocks)
+    def draw_map(self,win,game_plan):
+        self.draw_blocks(win,game_plan.list_of_blocks)
     def draw_blocks(self,win,list_of_blocks):
         for brick in list_of_blocks:
             self.draw_rect(win,brick)
