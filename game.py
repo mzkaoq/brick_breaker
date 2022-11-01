@@ -14,6 +14,7 @@ class Game:
         self.drawing = Draw()
         self.drawing.draw_map(self.win, self.game_plan)
     def update(self):
+        self.game_plan.update_balls()
         self.drawing.draw_map(self.win,self.game_plan)
 
 

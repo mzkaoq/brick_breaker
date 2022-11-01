@@ -7,6 +7,7 @@ WIN = pygame.display.set_mode((SIZE_X * SCALE,SIZE_Y * SCALE))
 pygame.display.set_caption("pingpongn")
 
 game = Game(WIN)
+game.init()
 
 def main():
     run = True
@@ -18,7 +19,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
-        game.init()
+        WIN.fill((0,0,0))
         game.update()
         pygame.display.update()
     pygame.quit()

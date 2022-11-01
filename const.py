@@ -12,3 +12,4 @@ SIZE_X, SIZE_Y = 200, 200
 
 SCALE = 4
 
+
