@@ -1,5 +1,5 @@
 import random
-
+from const import  SIZE_X, SIZE_Y, SCALE
 class Ball:
     def __init__(self):
         self.x = 100
@@ -63,4 +63,7 @@ class Game_plan:
         for ball in self.list_of_balls:
             ball.x += ball.speed * ball.direction_x
             ball.y += ball.speed * ball.direction_y
-
+            if ball.x >= SIZE_X or ball.x <= 0:
+                ball.direction_x *= -1
+            if ball.y >= SIZE_Y or ball.y <= 0:
+                ball.direction_y *= -1

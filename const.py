@@ -6,7 +6,7 @@ BLUE = (0, 0, 255)
 BLACK = (20,20,20)
 GREY = (127, 127, 127)
 
-FPS_RATE = 25
+FPS_RATE = 50
 
 SIZE_X, SIZE_Y = 200, 200
 
