@@ -30,7 +30,7 @@ class Racket:
 
 class Game_plan:
     def __init__(self):
-        self.map = [[0 for x in range(200)] for y in range(200)]
+        self.map = [[0 for x in range(201)] for y in range(201)]
         self.list_of_blocks = []
         self.list_of_balls = []
         self.init_pos()
@@ -63,7 +63,23 @@ class Game_plan:
         for ball in self.list_of_balls:
             ball.x += ball.speed * ball.direction_x
             ball.y += ball.speed * ball.direction_y
-            if ball.x >= SIZE_X or ball.x <= 0:
+            if ball.x >= SIZE_X:
                 ball.direction_x *= -1
-            if ball.y >= SIZE_Y or ball.y <= 0:
+                ball.x = SIZE_X
+            if ball.x <= 0:
+                ball.direction_x *= -1
+                ball.x = 0
+            if ball.y >= SIZE_Y:
+                ball.direction_y *= -1
+                ball.y = SIZE_Y
+            if ball.y <= 0:
+                ball.direction_y *= -1
+                ball.y = 0
+            print(ball.x,ball.y)
+            self.collision(ball)
+    def collision(self,ball):
+        if self.map[int(ball.x)][int(ball.y)] != 0:
+            if self.map[int(ball.x + 1)][int(ball.y)] != 0 or self.map[int(ball.x - 1)][int(ball.y)] != 0:
+                ball.direction_x *= -1
+            if self.map[int(ball.x)][int(ball.y + 1)] != 0 or self.map[int(ball.x)][int(ball.y - 1)] != 0:
                 ball.direction_y *= -1
